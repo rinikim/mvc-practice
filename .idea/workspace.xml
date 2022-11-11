@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5811ad6-b230-4da2-bbdf-16fdfb9eccef" name="Changes" comment="" />
+    <list default="true" id="d5811ad6-b230-4da2-bbdf-16fdfb9eccef" name="Changes" comment="feat : @Controller, @Service, @RequestMapping 애노테이션을 만들어본다.&#10;&#10;- 애노테이션을 만든 후 해당 애노테이션들을 사용한 class 들을 조회하여 테스트해본다.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ReflectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ReflectionTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +54,7 @@
       <recent name="org.example.annotation" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ReflectionTest.showClass">
+  <component name="RunManager" selected="Gradle.ReflectionTest.load">
     <configuration name="ReflectionTest.controllerScan" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -65,6 +69,29 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;org.example.ReflectionTest.controllerScan&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ReflectionTest.load" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.ReflectionTest.load&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -99,6 +126,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ReflectionTest.load" />
         <item itemvalue="Gradle.ReflectionTest.showClass" />
         <item itemvalue="Gradle.ReflectionTest.controllerScan" />
       </list>
@@ -113,8 +141,16 @@
       <option name="presentableId" value="Default" />
       <updated>1668168925098</updated>
       <workItem from="1668168928274" duration="350000" />
-      <workItem from="1668169545933" duration="1168000" />
+      <workItem from="1668169545933" duration="1788000" />
     </task>
+    <task id="LOCAL-00001" summary="feat : @Controller, @Service, @RequestMapping 애노테이션을 만들어본다.&#10;&#10;- 애노테이션을 만든 후 해당 애노테이션들을 사용한 class 들을 조회하여 테스트해본다.">
+      <created>1668170847197</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668170847197</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,5 +166,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat : @Controller, @Service, @RequestMapping 애노테이션을 만들어본다.&#10;&#10;- 애노테이션을 만든 후 해당 애노테이션들을 사용한 class 들을 조회하여 테스트해본다." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : @Controller, @Service, @RequestMapping 애노테이션을 만들어본다.&#10;&#10;- 애노테이션을 만든 후 해당 애노테이션들을 사용한 class 들을 조회하여 테스트해본다." />
   </component>
 </project>
