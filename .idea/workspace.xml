@@ -4,17 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5811ad6-b230-4da2-bbdf-16fdfb9eccef" name="Changes" comment="feat : 프론트 컨트롤러 실습">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/WebApplicationServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/mvc/DispatcherServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/mvc/RequestMappingHandlerMapping.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/mvc/controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/mvc/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapps/home.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapps/user/form.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapps/user/list.jsp" afterDir="false" />
+    <list default="true" id="d5811ad6-b230-4da2-bbdf-16fdfb9eccef" name="Changes" comment="feat : 프론트 컨트롤러 구현하기 실습&#10;&#10;- 요청들어오는 것을 DispatcherServlet 이 받아 controller 과 viewName 을 반환해주는 프론트 컨트롤러 패턴 구현">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ForwardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/HandlerKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/UserCreateController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/UserListController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/JspView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/JspViewResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/RedirectView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/View.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/view/ViewResolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mvc/DispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/mvc/DispatcherServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mvc/RequestMappingHandlerMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/mvc/RequestMappingHandlerMapping.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +33,28 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="mvc-practice" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="mvc-practice" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="mvc-practice" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -59,22 +82,23 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/hyerin/IdeaProjects/mvc-practice/webapps/WEB-INF",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/hyerin/IdeaProjects/mvc-practice/webapps/WEB-INF&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example.controller" />
       <recent name="org.example.annotation" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -165,8 +189,30 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="mvc-practice [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.mvc-practice [build]" />
         <item itemvalue="Application.WebApplicationServer" />
         <item itemvalue="Gradle.ReflectionTest.load" />
         <item itemvalue="Gradle.ReflectionTest.showClass" />
@@ -184,6 +230,7 @@
       <updated>1668168925098</updated>
       <workItem from="1668168928274" duration="350000" />
       <workItem from="1668169545933" duration="7618000" />
+      <workItem from="1668421082708" duration="3164000" />
     </task>
     <task id="LOCAL-00001" summary="feat : @Controller, @Service, @RequestMapping 애노테이션을 만들어본다.&#10;&#10;- 애노테이션을 만든 후 해당 애노테이션들을 사용한 class 들을 조회하여 테스트해본다.">
       <created>1668170847197</created>
@@ -199,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668171427487</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat : 프론트 컨트롤러 구현하기 실습&#10;&#10;- 요청들어오는 것을 DispatcherServlet 이 받아 controller 과 viewName 을 반환해주는 프론트 컨트롤러 패턴 구현">
+      <created>1668421163715</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668421163715</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,23 +273,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat : @Controller, @Service, @RequestMapping 애노테이션을 만들어본다.&#10;&#10;- 애노테이션을 만든 후 해당 애노테이션들을 사용한 class 들을 조회하여 테스트해본다." />
     <MESSAGE value="feat : 클레스타입 객체 가져오는 방법 3가지 테스트 해보기" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : 클레스타입 객체 가져오는 방법 3가지 테스트 해보기" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/mvc/DispatcherServlet.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/mvc/DispatcherServlet.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="feat : 프론트 컨트롤러 실습" />
+    <MESSAGE value="feat : 프론트 컨트롤러 구현하기 실습&#10;&#10;- 요청들어오는 것을 DispatcherServlet 이 받아 controller 과 viewName 을 반환해주는 프론트 컨트롤러 패턴 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : 프론트 컨트롤러 구현하기 실습&#10;&#10;- 요청들어오는 것을 DispatcherServlet 이 받아 controller 과 viewName 을 반환해주는 프론트 컨트롤러 패턴 구현" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/mvc_practice$WebApplicationServer.ic" NAME="WebApplicationServer Coverage Results" MODIFIED="1668172280256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

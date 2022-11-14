@@ -3,8 +3,8 @@ package org.example.model;
 import java.util.Objects;
 
 public class User {
-    private String userId;
-    private String name;
+    private final String userId;
+    private final String name;
 
     public User(String userId, String name) {
         this.userId = userId;
@@ -26,5 +26,13 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(userId, name);
+    }
+
+    public String getUserId() {
+        return this.userId;
+    }
+
+    public String getName() {
+        return name;
     }
 }
