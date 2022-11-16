@@ -1,7 +1,6 @@
 package org.example.mvc;
 
 import org.example.controller.HandlerKey;
-import org.example.mvc.controller.Controller;
 
 
 public interface HandlerMapping {
