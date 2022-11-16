@@ -6,6 +6,6 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
+@Retention(RetentionPolicy.RUNTIME) // 유지기간
 public @interface Controller {
 }

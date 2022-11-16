@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 // mvc 패턴 중 HandlerMapping 의 역할
-public class RequestMappingHandlerMapping {
+public class RequestMappingHandlerMapping implements HandlerMapping {
     // /users, UserController
     private Map<HandlerKey, Controller> mappings = new HashMap<>();
 
